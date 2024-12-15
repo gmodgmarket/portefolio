@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - G'Playermodels</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome pour les icônes -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <h1>G'Playermodels</h1>
+            <ul class="menu">
+                <li><a href="#" class="tab-link active" data-tab="welcome">Bienvenue</a></li>
+                <li><a href="#" class="tab-link" data-tab="gallery">Playermodels</a></li>
+                <li><a href="#" class="tab-link" data-tab="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu Principal -->
+    <main>
+        <!-- Section Bienvenue -->
+        <section id="welcome" class="tab-content active">
+            <div class="intro-container">
+                <img src="images/avatar.png" alt="Avatar" class="profile-pic">
+                <p>
+                    Bonjour et bienvenue ! Je réalise des <strong>playermodels</strong> pour <strong>Garry's Mod</strong>. Découvrez mes créations et n'hésitez pas à me contacter pour vos projets !
+                </p>
+            </div>
+        </section>
+
+        <!-- Section Galerie -->
+        <section id="gallery" class="tab-content">
+            <h2>- PLAYERMODELS -</h2>
+            <div class="project-gallery">
+                <div class="project-item">
+                    <img src="images/playermodel1.png" alt="Playermodel 1" class="zoom-image">
+                    <p>Eren Yeager S4</p>
+                </div>
+                <!-- <div class="project-item">
+                    <img src="images/playermodel2.png" alt="Playermodel 2" class="zoom-image">
+                    <p>Eren Yeager S4</p>
+                </div>
+                <div class="project-item">
+                    <img src="images/playermodel3.png" alt="Playermodel 3" class="zoom-image">
+                    <p>Eren Yeager S4</p>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="tab-content">
+            <h2>- CONTACT -</h2>
+            <p>Vous souhaitez en savoir plus sur mes playermodels ou travailler avec moi ? Contactez-moi via les moyens suivants :</p>
+            
+            <div class="contact-container">
+                <!-- Email -->
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>Envoyez-moi un message :</p>
+                    <a href="mailto:gmodgmarketcontact@gmail.com" class="contact-btn">gmodgmarketcontact@gmail.com</a>
+                </div>
+
+                <!-- Discord -->
+                <div class="contact-item">
+                    <i class="fab fa-discord"></i>
+                    <h3>Discord</h3>
+                    <p>Rejoignez mon serveur :</p>
+                    <a href="https://discord.gg/BdzAsCKF" class="contact-btn" target="_blank">Rejoindre le Discord</a>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="contact-item">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Réseaux sociaux</h3>
+                    <p>Suivez-moi pour plus d'actualités :</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 G'Playermodels | Tous droits réservés</p>
+    </footer>
+
+    <!-- Lightbox pour zoomer les images -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Image">
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Onglets pour navigation
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                tabLinks.forEach(l => l.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                link.classList.add('active');
+                const activeTab = link.getAttribute('data-tab');
+                document.getElementById(activeTab).classList.add('active');
+            });
+        });
+
+        // Lightbox pour zoomer les images
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox .close');
+        const images = document.querySelectorAll('.zoom-image');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = image.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
