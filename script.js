@@ -18,8 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "images/playermodel3.png",
             description: "Mei Mei, the agile assassin.",
             featured: true
+        },
+        {
+            name: "Tanjuro",
+            image: "images/playermodel4.png",
+            description: "...",
+            featured: true
         }
-        // Archer, Mage, Knight ont été supprimés
     ];
 
     // Fonction pour générer le slideshow dans la section Bienvenue
