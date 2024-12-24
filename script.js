@@ -24,7 +24,49 @@ document.addEventListener('DOMContentLoaded', () => {
             image: "images/playermodel4.png",
             description: "...",
             featured: true
-        }
+        },
+        {
+            name: "Mundane Mann",
+            image: "images/playermodel5.png",
+            description: "...",
+            featured: false
+        },
+        {
+            name: "John Smith",
+            image: "images/playermodel6.png",
+            description: "...",
+            featured: false
+        },
+        {
+            name: "Goule",
+            image: "images/playermodel7.png",
+            description: "...",
+            featured: false
+        },
+        {
+            name: "Elisabeth",
+            image: "images/playermodel8.png",
+            description: "...",
+            featured: false
+        },
+        {
+            name: "Gettan",
+            image: "images/playermodel9.png",
+            description: "...",
+            featured: false
+        },
+        {
+            name: "CUSTOM - Féminin Midgar Student",
+            image: "images/playermodel10.png",
+            description: "...",
+            featured: false
+        },
+        {
+            name: "CUSTOM - Masculin Midgar Student",
+            image: "images/playermodel11.png",
+            description: "...",
+            featured: false
+        },
     ];
 
     // Fonction pour générer le slideshow dans la section Bienvenue
